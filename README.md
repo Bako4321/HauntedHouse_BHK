@@ -22,7 +22,7 @@ Other – Changed skybox, lighting, added a distortion lens around the camera wi
 
 Repository Link: https://github.com/Bako4321/HauntedHouse\_BHK
 
-Video Link: 
+Video Link: https://youtu.be/fV7hHiQH8PM
 
 
 
