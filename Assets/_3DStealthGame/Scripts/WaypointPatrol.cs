@@ -5,7 +5,10 @@ using UnityEngine.AI;
 
 public class WaypointPatrol : MonoBehaviour
 {
-    public float moveSpeed = 1.0f;
+    public float minSpeed = 1.0f;
+    public float maxSpeed = 4.0f;
+    public float currentMoveSpeed = 1.0f;
+
     public Transform[] waypoints;
 
     private Rigidbody m_RigidBody;
@@ -14,6 +17,7 @@ public class WaypointPatrol : MonoBehaviour
     void Start ()
     {
         m_RigidBody = GetComponent<Rigidbody>();
+        currentMoveSpeed = Random.Range(minSpeed, maxSpeed);
     }
 
     void FixedUpdate ()
@@ -24,9 +28,10 @@ public class WaypointPatrol : MonoBehaviour
         if (currentToTarget.magnitude < 0.1f)
         {
             m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
+            currentMoveSpeed = Random.Range(minSpeed, maxSpeed); 
         }
         Quaternion forwardRotation = Quaternion.LookRotation(currentToTarget);
         m_RigidBody.MoveRotation(forwardRotation);
-        m_RigidBody.MovePosition(m_RigidBody.position + currentToTarget.normalized * moveSpeed * Time.deltaTime);
+        m_RigidBody.MovePosition(m_RigidBody.position + currentToTarget.normalized * currentMoveSpeed * Time.deltaTime);
     }
 }
