@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5050424766226890458}
   - component: {fileID: 3276942251930417221}
   - component: {fileID: 5194466293476850532}
+  - component: {fileID: 182783295954344560}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -146,8 +147,30 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
+  RunAction:
+    m_Name: Run
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ec7bd9df-207c-45b9-8cf6-c457ee1aaaa9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   walkSpeed: 1
   turnSpeed: 20
+  runMultiplier: 2
+  boostDuration: 3
+  rechargeTime: 5
+  boostIcon: {fileID: 0}
+  boostBarFill: {fileID: 0}
+--- !u!81 &182783295954344560
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678287242592000715}
+  m_Enabled: 1
 --- !u!1001 &5412192725761051666
 PrefabInstance:
   m_ObjectHideFlags: 0
